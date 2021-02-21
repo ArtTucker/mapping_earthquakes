@@ -5,14 +5,21 @@ console.log("working");
 let map = L.map('mapid').setView([40.7, -94.5], 4);
 
 // add a marker to the map for London, UK
-var marker = L.marker([51.5, -0.09]).addTo(mymap);
+var marker = L.marker([51.5, -0.09]).addTo(map);
 
 //  Add a circle to the map over Los Angeles, California.
-let marker = L.circle([34.0522, -118.2437], {
+L.circle([34.0522, -118.2437], {
     color: 'black',
     fillColor: "yellow",
     fillOpacity: 0.60,
     radius: 500
+}).addTo(map);
+
+// or make a circle with circleMarker
+L.circleMarker([34, -118], {
+    radius: 3,
+    color: 'black',
+    fillColor: '#ffffa1'
 }).addTo(map);
 
 // We create the tile layer that will be the background of our map.
