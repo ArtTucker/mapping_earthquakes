@@ -6,15 +6,18 @@ let map = L.map('mapid').setView([37.6213, -122.3790], 5);
 
 // Coordinates for each point to be used in the polyline.
 let line = [
-    [33.9416, -118.4085],
     [37.6213, -122.3790],
-    [40.7899, -111.9791],
-    [47.4502, -122.3088]
+    [30.1974, -97.6664],
+    [43.6779, -79.6293],
+    [40.6412, -73.7782]
 ];
 
 // Create a polyline using the line coordinates and make the line red.
 L.polyline(line, {
-    color: "yellow",
+    color: "blue",
+    style: "dashed",
+    weight: 4,
+    opacity: 0.5
 }).addTo(map);
 
 // Get data from cities.js
