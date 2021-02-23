@@ -4,23 +4,21 @@ console.log("working");
 // Create the map object with a center and zoom level.
 let map = L.map('mapid').setView([40.7, -94.5], 4);
 
-// add a marker to the map for London, UK
-var marker = L.marker([51.5, -0.09]).addTo(map);
+// Get data from cities.js
+let cityData = cities;
 
-//  Add a circle to the map over Los Angeles, California.
-L.circle([34.0522, -118.2437], {
-    color: 'black',
-    fillColor: "yellow",
-    fillOpacity: 0.60,
-    radius: 500
-}).addTo(map);
-
-// or make a circle with circleMarker
-L.circleMarker([34, -118], {
-    radius: 3,
-    color: 'black',
-    fillColor: '#ffffa1'
-}).addTo(map);
+// Loop through the cities array and create one marker for each city.
+cityData.forEach(function(city){
+    //console.log(city)
+    L.circleMarker(city.location, {
+        radius: city.population/200000,
+        color: 'orange',
+        fillColor: 'orange',
+        weight: 4
+    })
+        .bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Population " + city.population.toLocaleString() + "</h3>")
+        .addTo(map);
+});
 
 // We create the tile layer that will be the background of our map.
 let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/tiles/{z}/{x}/{y}?access_token={accessToken}', {
