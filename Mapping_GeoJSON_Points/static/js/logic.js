@@ -27,15 +27,27 @@ let sanFranAirport = {
     }]
 };
 
+// // Grabbing our GeoJSON data
+// L.geoJson(sanFranAirport, {
+//     // We turn each feature into a marker on the map
+//     pointToLayer: function(feature, latlng) {
+//         console.log(feature);
+//         return L.marker(latlng)
+//         .bindPopup("<h2>" + feature.properties.name + "</h2> <hr> <h2>"+ feature.properties.city + ", " + feature.properties.country + "</h2>");
+//     }
+// }).addTo(map);
+
 // Grabbing our GeoJSON data
 L.geoJson(sanFranAirport, {
     // We turn each feature into a marker on the map
-    pointToLayer: function(feature, latlng) {
-        console.log(feature);
-        return L.marker(latlng)
-        .bindPopup("<h2>" + feature.properties.name + "</h2> <hr> <h2>"+ feature.properties.city + ", " + feature.properties.country + "</h2>");
+    onEachFeature: function(feature, layer) {
+        console.log(layer);
+        layer.bindPopup("<h2> Airport Code: " + feature.properties.faa + "</h2> <hr> <h2>Airport Name: "+ feature.properties.name + "</h2>");
     }
 }).addTo(map);
+
+
+
 
 // We create the tile layer that will be the background of our map.
 let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/tiles/{z}/{x}/{y}?access_token={accessToken}', {
