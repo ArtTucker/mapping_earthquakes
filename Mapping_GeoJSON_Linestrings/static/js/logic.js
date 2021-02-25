@@ -37,13 +37,18 @@ let airportData = "https://raw.githubusercontent.com/ArtTucker/Mapping_Earthquak
 // Accessing the Toronto airline routes GeoJSON URL.
 let torontoData = "https://raw.githubusercontent.com/ArtTucker/Mapping_Earthquakes/main/torontoRoutes.json";
 
+// Create a style for the lines
+let myStyle = {
+    color: "#ffffa1",
+    weight: 2
+}
+
 // Grabbing our GeoJSON data.
 d3.json(torontoData).then(function(data) {
     console.log(data);
     // Creating a GeoJSON layer with the retrieved data.
     L.geoJson(data, {
-        color: '#ffffa1',
-        weight: 2,
+        style: myStyle,
         onEachFeature: function(features, layer) {
             //console.log(layer);
             layer.bindPopup("<h2> Airport Code: " + features.properties.faa + "</h2> <hr> <h2>Airport Name: "+ features.properties.name + "</h2>");
