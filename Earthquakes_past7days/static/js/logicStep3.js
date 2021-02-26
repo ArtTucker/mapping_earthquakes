@@ -100,19 +100,3 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
         }
     }).addTo(map);
 });
-
-// Grabbing our GeoJSON data.
-// d3.json(torontoHoods).then(function(data) {
-//     console.log(data);
-//     // Creating a GeoJSON layer with the retrieved data.
-//     L.geoJson(data, {
-//         style: myStyle,
-//         onEachFeature: function(features, layer) {
-//             //console.log(layer);
-//             layer.bindPopup("<h2> Area Name: " + features.properties.AREA_NAME + "</h2> ");
-//         }
-//     }).addTo(map);
-// });
-
-// Then we add our 'graymap' tile layer to the map.
-//streets.addTo(map);
