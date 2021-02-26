@@ -31,15 +31,6 @@ let map = L.map('mapid', {
 // Pass our map layers into our layers control and add the layers control to the map.
 L.control.layers(baseMaps).addTo(map);
 
-// Accessing the Toronto neighborhoods GeoJSON URL.
-//let torontoHoods = "https://raw.githubusercontent.com/ArtTucker/Mapping_Earthquakes/main/torontoNeighborhoods.json";
-
-// Accessing the airport GeoJSON URL
-//let airportData = "https://raw.githubusercontent.com/ArtTucker/Mapping_Earthquakes/main/majorAirports.json";
-
-// Accessing the Toronto airline routes GeoJSON URL.
-//let torontoData = "https://raw.githubusercontent.com/ArtTucker/Mapping_Earthquakes/main/torontoRoutes.json";
-
 // Create a style for the lines
 let myStyle = {
     color: "blue",
@@ -52,19 +43,3 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geoj
   // Creating a GeoJSON layer with the retrieved data.
   L.geoJson(data).addTo(map);
 });
-
-// Grabbing our GeoJSON data.
-// d3.json(torontoHoods).then(function(data) {
-//     console.log(data);
-//     // Creating a GeoJSON layer with the retrieved data.
-//     L.geoJson(data, {
-//         style: myStyle,
-//         onEachFeature: function(features, layer) {
-//             //console.log(layer);
-//             layer.bindPopup("<h2> Area Name: " + features.properties.AREA_NAME + "</h2> ");
-//         }
-//     }).addTo(map);
-// });
-
-// Then we add our 'graymap' tile layer to the map.
-//streets.addTo(map);
