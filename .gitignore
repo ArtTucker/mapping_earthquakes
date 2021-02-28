@@ -5,3 +5,4 @@ Mapping_Multiple_Points/static/.DS_Store
 Mapping_GeoJSON_Points/static/.DS_Store
 Mapping_GeoJSON_Linestrings/static/.DS_Store
 .DS_Store
+Earthquake_Challenge/static/js/major_eq_starter_logic.js
