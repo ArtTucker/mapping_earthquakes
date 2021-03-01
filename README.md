@@ -11,6 +11,7 @@ The purpose of this project was to utilize a variety of tools and resources to b
 
 ## Usage
 ![Layer controls](Earthquake_Challenge/images/layer_menu.png)
+
 The map provies a few different view options though the overlay control panel in the top-right corner.
 Map styles are as follows:
 - Street Map
