@@ -17,6 +17,7 @@ Map styles are as follows:
 - Street Map
 - Satellite Image w/ Street Data
 - Dark map
+
 The informational overlays available are:
 - All Earthquakes (for the past 7 days)
 - Techtonic Plate Boundaries
